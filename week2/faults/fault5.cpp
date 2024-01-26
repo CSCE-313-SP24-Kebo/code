@@ -4,7 +4,7 @@
 int main () { 
   try
   { 
-     int * myarray = new int[1000000000000]; // This allocation exceeds the available memory size, such a large allocation is not possible.
+     int * myarray = new int[9999999999]; // This allocation exceeds the available memory size, such a large allocation is not possible.
   } 
   catch (std::bad_alloc & exception) 
   { 
