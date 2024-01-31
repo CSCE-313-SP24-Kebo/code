@@ -6,8 +6,8 @@ Example: C program to implement 2 forks
 #include <unistd.h>
 int main()
 {
-	fork();
-	fork();
+	fork(); // Child process 1
+	fork(); // Child process 2
 	
 	printf("Welcome to CSCE 313!\n");
 	return 0;
