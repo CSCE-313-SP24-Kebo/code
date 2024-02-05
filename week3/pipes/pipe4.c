@@ -41,7 +41,7 @@ int main(int argc, char* argv[]){
     /* Child sends response of "goodbye" */
     strncpy (buffer, "goodbye", sizeof (buffer));
     write (c2pfd[1], buffer, 10);
-    exit (0);
+    exit (0); // Here
   }
 
   /* Parent closes read end of p2c */

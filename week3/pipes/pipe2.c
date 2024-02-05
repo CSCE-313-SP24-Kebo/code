@@ -45,10 +45,9 @@ int main(int argc, char* argv[]){
 		wait(NULL); // Wait for the child process to read the string.
 	}
 	else{
-		//child close the write end
-		close(pipefds[1]); // Close the write end on the child
-		//child read from the pipe read end until the pipe is em
-
+		// Close the write end on the child
+		close(pipefds[1]); 
+		//child read from the pipe read end until the pipe is empty!
 		// Read 1 byte at a time from the pipe
 		while(read(pipefds[0],buf,1)==1){
 			printf("CHILD read from pipe --%s\n",buf);

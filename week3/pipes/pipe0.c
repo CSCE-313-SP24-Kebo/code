@@ -15,7 +15,7 @@ int main()
 	int fd[2];  // File descriptor
 
 	// opening of pipe using pipe(fd)
-	char buff[10];
+	char buff[20];
 	if (pipe(fd) == -1)
 	{
 		perror("pipe"); // error in pipe
@@ -23,11 +23,11 @@ int main()
 	}
 
 	// writing a string "code" in pipe
-	write(fd[1], "code\n", 6);  // write(pipe end, string, number of bytes)
+	write(fd[1], "MINECRAFT\n", 10);  // write(pipe end, string, number of bytes)
 	printf("Writing to the pipe\n");
 
 	// reading pipe now buff is equal to "code"
-	read(fd[0], buff, 6);
+	read(fd[0], buff, 10);
 	printf("Reading from the pipe\n");
 
 	// it will print "code"
