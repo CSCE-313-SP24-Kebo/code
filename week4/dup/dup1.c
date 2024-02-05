@@ -13,11 +13,12 @@ Parent is acting like 'bash' interpreting the command line: $ ls | sort
 #include <stdlib.h>
 #include <sys/wait.h>
 
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[])
+{
 
-    int pipefd[2]; // Array of file descriptors
-    char buffer[10]; // Data
-    pid_t child_pid; // Process ID
+    int pipefd[2];                     // Array of file descriptors
+    char buffer[20];                   // Data
+    pid_t child_pid;                   // Process ID
     memset(buffer, 0, sizeof(buffer)); /* Clear the buffer */
 
     /* Open the pipe */
