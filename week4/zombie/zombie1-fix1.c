@@ -20,6 +20,6 @@ int main()
     {
         wait(NULL); // Wait on the return status of the child process
         printf("I am Parent\n");
-        while(1);
+        //while(1); // Keeps the CPU busy
     }
 }

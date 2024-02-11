@@ -12,7 +12,7 @@ int main()
     int i;
     int pid = fork();
 
-    if (pid == 0)
+    if (pid == 0) // Print multiple lines - Worker
     {
         for (i = 0; i < 20; i++)
             printf("I am Child\n");
@@ -20,7 +20,7 @@ int main()
     else
     {
         printf("I am Parent\n");
-        while (1) // Pause
+        while (1)
             ;
     }
 }

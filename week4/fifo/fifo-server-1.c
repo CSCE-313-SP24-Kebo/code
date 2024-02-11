@@ -42,7 +42,7 @@ int main(int argc, char const *argv[]) {
   /* Read a 0 from the FIFO, so close and delete the FIFO */
   close (fifo);
   printf ("Deleting FIFO\n");
-  unlink (FIFO);
+  unlink (FIFO); // ?
 
   return 0;
 }
