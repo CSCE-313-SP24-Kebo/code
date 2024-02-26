@@ -14,8 +14,9 @@ int main()
 	int fd1 = open("sample.txt", O_RDONLY, 0);
 	int fd2 = open("sample.txt", O_RDONLY, 0);
 	int fd3 = open("sample.txt", O_RDONLY, 0);
+
 	printf("%d %d %d\n", fd1, fd2, fd3);
-	dup2(fd2, fd3);
+	dup2(fd2, fd3); // Copy of file descriptor
 
 	read(fd1, &c1, 1);
 	printf("c = %c\n", c1);

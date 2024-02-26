@@ -12,11 +12,11 @@ int main (void)
 	char buf2[12];
 
 	// assume foobar.txt is already created
-	fd[0] = open("foobar.txt", O_RDWR);		
-	fd[1] = open("foobar.txt", O_RDWR);
+	fd[0] = open("foobar.txt", O_RDWR);	// fp is at the zero	position
+	fd[1] = open("foobar.txt", O_RDWR); // fp is at the zero position
 	
 	write(fd[0], buf1, strlen(buf1));		
-	write(1, buf2, read(fd[1], buf2, 12));
+	write(1, buf2, read(fd[1], buf2, 12)); // Print the final file content to the STDOUT
 
 	close(fd[0]);
 	close(fd[1]);

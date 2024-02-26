@@ -30,6 +30,6 @@ int main()
         signal(SIGUSR1, do_something); // do_something is a signal handler
         //sigaction();
         printf("I am Parent\n");
-        //while(1);
+        while(1);
     }
 }
