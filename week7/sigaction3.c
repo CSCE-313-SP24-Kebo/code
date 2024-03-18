@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <sys/wait.h>
+#include "apue.h"
+#include <sys/types.h>
 
 void custom_sigint_handler(int signum) {
     printf("Custom handler called for signal %d (SIGINT)\n", signum);
@@ -9,6 +12,8 @@ void custom_sigint_handler(int signum) {
 int main() {
     // Create a sigaction structure to store the old signal handling behavior
     struct sigaction old_action;
+    old_action.sa_flags = SA_NODEFER;
+    sigemptyset(&old_action.sa_mask);
 
     // Set up a custom signal handler for SIGINT
     struct sigaction new_action;
@@ -21,14 +26,16 @@ int main() {
         printf("Custom signal handler for SIGINT has been set.\n");
 
         // To access the old behavior, you can examine the old_action structure
-        printf("Previous handler address: %p\n", (void *)(old_action.sa_handler));
+        printf("New handler address: %p\n", (void *)(new_action.sa_handler));
+        //printf("New handler address: %p\n", (void *)(old_action.sa_handler));
     } else {
         perror("sigaction");
         return 1;
     }
 
     // Trigger a SIGINT signal
-    raise(SIGINT);
+    //raise(SIGINT);
+    sleep(20);
 
     // Continue program execution
 

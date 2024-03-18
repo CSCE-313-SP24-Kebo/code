@@ -26,9 +26,9 @@ int main (){
 
         // If in the child process
         if (pid == 0){
-            sleep (2*i); // Sleep for i seconds
+            sleep (6*i); // Sleep for i seconds
             printf("Child %d is exiting\n", i);
-            return 0; // Exit the child process i
+            return 0; // Exit of the child process i -- >>> sends a SIGCHLD signal
         }
     }
 

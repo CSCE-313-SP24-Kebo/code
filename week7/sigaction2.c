@@ -56,8 +56,8 @@ int main(int argc, char *argv[])
      * Send a signal to this program by using kill(getpid(), SIGUSR1); (equivalent to raise(SIGUSR1))
      */
     printf("Raising a SIGUSR1 signal\n");
-    //raise(SIGUSR1);
-    kill(getpid(), SIGUSR1);
+    raise(SIGUSR1);
+    //kill(getpid(), SIGUSR1);
 
     /*
      * Get the current value of the signal handling action for SIGUSR1.

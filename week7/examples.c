@@ -1,4 +1,24 @@
 /*
+SIG_BLOCK
+current: {A, B}
+new: {C}
+resulting mask: {A, B , C}
+
+
+SIG_UNBLOCK
+current: {A, B}
+new: {B, C}
+resulting mask: {A, B} intersect not {B,C} = {A}
+
+SIG_SETMASK
+current: {A, B}
+new: {B, C}
+resulting mask: {B,C}
+
+*/
+
+
+/*
 In this example, both SIGINT and SIGTERM signals are added to the current signal mask, effectively blocking them.
 */
 sigset_t new_set;
