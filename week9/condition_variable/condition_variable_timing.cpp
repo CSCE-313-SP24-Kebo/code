@@ -23,6 +23,7 @@ void workThread() {
   std::unique_lock<std::mutex> ul(g_mutex);
   g_ready = true;
   ul.unlock(); // optional
+  // 5 inst... If you do a non critical
   g_cv.notify_one(); // Interrupt
 }
 

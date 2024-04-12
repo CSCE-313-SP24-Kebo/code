@@ -13,6 +13,7 @@ bool g_ready = false;  // not a condition variable!
 
 // Producer : generate the data
 void workThread() {
+  // Simulation of producing data
   std::this_thread::sleep_for(std::chrono::seconds(60));
   std::unique_lock<std::mutex> ul(g_mutex);
   g_ready = true;
@@ -25,6 +26,7 @@ void waitThread() {
   while(!g_ready){// Wait on the flag
 
   }
+  // Don not start using the data until g_ready is true!
   // Consume the data - use the data
   std::cout << "Wait Thread Executed! \n";
 }
